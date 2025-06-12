@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven-3.9.10'   // Debe coincidir con el nombre configurado en Jenkins
-        jdk 'JDK 21'           // Igual, debe ser exacto
+        maven 'Maven-3.9.10'
+        jdk 'JDK 21'
     }
 
     stages {
         stage('Clonar') {
             steps {
-                git 'https://github.com/Matias-Trujillo/saludoapp.git'
+                git branch: 'main', url: 'https://github.com/Matias-Trujillo/saludoapp.git'
             }
         }
 
@@ -41,3 +41,4 @@ pipeline {
         }
     }
 }
+
